@@ -3,10 +3,11 @@ import {
   apiPlugin,
   storyblokEditable,
   loadStoryblokBridge,
+  renderRichText,
 } from '@storyblok/js';
 
 const dev = import.meta.env.DEV;
-const storyblokToken = 'IyKroPqXcYGYAhlCh8wimQtt';
+const storyblokToken = import.meta.env.STORYBLOK_TOKEN;
 
 const { storyblokApi } = storyblokInit({
   bridge: false,
@@ -54,4 +55,8 @@ export async function activateStoryblokBridge() {
       location.reload(true);
     });
   });
+}
+
+export async function parseRichText(blok) {
+  return renderRichText(blok);
 }
