@@ -1,4 +1,5 @@
 module.exports = {
+  plugins: [require('kutty')],
   content: ['./src/**/*.{astro,html,js,jsx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {},
@@ -7,4 +8,4 @@ module.exports = {
       padding: '1.5rem',
     },
   },
-}
+};
