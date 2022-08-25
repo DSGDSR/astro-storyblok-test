@@ -12,5 +12,5 @@ const editableAttributes = await getEditableAttributes(story)
 	data-blok-uid={editableAttributes['data-blok-uid']}
 	class:list={[{ 'storyblok__outline': editableAttributes }]}
 >
-	<StoryblokComponents story={story} />
+	<StoryblokComponents children={story.content?.body} />
 </main>

@@ -1,18 +1,32 @@
 ---
-import Teaser from '../components/Teaser.astro';
-import Feature from '../components/Feature.astro';
-import Grid from '../components/Grid.astro';
+import Testimonial from './Testimonial.astro';
+import Hero from './Hero.astro';
+import Features from './Features.astro';
+import Cta from './Cta.astro';
+import Container from './Container.astro';
+import Button from './Button.astro';
+import DescriptionList from './DescriptionList.astro';
 
-const { story } = Astro.props
+const { children } = Astro.props
 ---
 
-{story.content.body?.map(blok => {
+{children?.map(blok => {
 	switch(blok.component) {
-		case 'teaser':
-			return <Teaser blok={blok} />
-		case 'feature':
-			return <Feature blok={blok} />
-		case 'grid':
-			return <Grid blok={blok} />
+		case 'button':
+			return <Button blok={blok} />
+		case 'testimonial':
+			return <Testimonial blok={blok} />
+		case 'hero':
+			return <Hero blok={blok} />
+		case 'features':
+			return <Features blok={blok} />
+		case 'cta':
+			return <Cta blok={blok} />
+		case 'cta':
+			return <Cta blok={blok} />
+		case 'container':
+			return <Container blok={blok} />
+		case 'description-list':
+			return <DescriptionList blok={blok} />
 	}
 })}
